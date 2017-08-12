@@ -1,5 +1,11 @@
 = Ansible with Vagrant
 
+WARNING: `controller` can't ping `node1` nor `node2`
+
+== Operation
+
+=== Vagrant
+
 ----
 vagrant up
 vagrant ssh
@@ -12,8 +18,30 @@ vagrant halt
 vagrant destroy
 ----
 
+[WARNING]
+====
+vagrant destroy --force
+====
+
+=== Ansible
+
+----
+ansible all -m ping -i inventory.yml
+----
+
 == References
 
 * http://docs.ansible.com/ansible/latest/guide_vagrant.html
 * https://www.vagrantup.com/docs/provisioning/ansible_intro.html
 * https://www.vagrantup.com/docs/provisioning/ansible_local.html
+* https://www.vagrantup.com/docs/multi-machine/
+
+== Expected results
+
+----
+==> controller: Running provisioner: ansible_local...
+    controller: Installing Ansible...
+    controller: Running ansible-playbook...
+cd /vagrant/provisioning && PYTHONUNBUFFERED=1 ANSIBLE_NOCOLOR=true ansible-playbook --limit="controller" --inventory-file=inventory.yml -vv playbook.yml
+Using /vagrant/provisioning/ansible.cfg as config file
+----
