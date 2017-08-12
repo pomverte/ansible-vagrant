@@ -1,0 +1,19 @@
+= Ansible with Vagrant
+
+----
+vagrant up
+vagrant ssh
+----
+
+.https://www.vagrantup.com/intro/getting-started/teardown.html
+----
+vagrant suspend
+vagrant halt
+vagrant destroy
+----
+
+== References
+
+* http://docs.ansible.com/ansible/latest/guide_vagrant.html
+* https://www.vagrantup.com/docs/provisioning/ansible_intro.html
+* https://www.vagrantup.com/docs/provisioning/ansible_local.html
