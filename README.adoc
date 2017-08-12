@@ -1,6 +1,9 @@
 = Ansible with Vagrant
 
-WARNING: `controller` can't ping `node1` nor `node2`
+IMPORTANT: Vagrant provision `ansible_local` only run playbook on the guest machine since,
+it's running `ansible-playbook --limit='controller' ...`.
+
+To run Ansible from docker to provision VM : https://github.com/pomverte/docker-compose/tree/master/ansible
 
 == Operation
 
